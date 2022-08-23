@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Employee, type: :model do
 
+  before(:all) do
+    @employee = create(:employee)
+  end
+
   describe '#validations' do
     it { should validate_presence_of(:first_name) }
     it { should validate_presence_of(:last_name) }
@@ -15,5 +19,11 @@ RSpec.describe Employee, type: :model do
     it { should validate_presence_of(:number) }
     it { should validate_presence_of(:state) }
     it { should validate_presence_of(:district) }
+  end
+
+  describe '#name' do
+    it 'returns the full name of the employee' do
+      expect(@employee.name).to eq("#{@employee.first_name} #{@employee.last_name}")
+    end
   end
 end
