@@ -10,7 +10,7 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-COPY . .
+COPY . /app
 
 COPY entrypoint.sh /usr/bin/
 
