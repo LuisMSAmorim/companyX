@@ -1,4 +1,4 @@
-class EmployeeService < ApplicationService 
+class EmployeesService < ApplicationService 
 
   def create(params:)
     employee = Employee.new(params)

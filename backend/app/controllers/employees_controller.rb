@@ -17,7 +17,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = employees_service.create(params: employee_params)
 
-    if @employee
+    if @employee.save
       render json: @employee, status: :created, location: @employee
     else
       render json: @employee.errors, status: :unprocessable_entity

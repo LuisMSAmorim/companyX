@@ -1,6 +1,70 @@
 {
   "RSpec": {
     "coverage": {
+      "/app/app/controllers/employees_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          6,
+          3,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/app/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/app/app/models/employee.rb": {
         "lines": [
           1,
@@ -31,6 +95,22 @@
           null
         ]
       },
+      "/app/app/services/employees_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/app/app/services/application_service.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/app/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
@@ -43,74 +123,6 @@
       },
       "/app/app/channels/application_cable/connection.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/app/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/app/app/controllers/employees_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -141,28 +153,8 @@
         ],
         "branches": {
         }
-      },
-      "/app/app/services/application_service.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/app/app/services/employees_service.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1661280449
+    "timestamp": 1661281080
   }
 }
