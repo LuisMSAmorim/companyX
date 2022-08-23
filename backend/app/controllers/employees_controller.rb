@@ -15,9 +15,9 @@ class EmployeesController < ApplicationController
 
   # POST /employees
   def create
-    @employee = Employee.new(employee_params)
+    @employee = employees_service.create(params: employee_params)
 
-    if @employee.save
+    if @employee
       render json: @employee, status: :created, location: @employee
     else
       render json: @employee.errors, status: :unprocessable_entity
@@ -39,13 +39,16 @@ class EmployeesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_employee
       @employee = Employee.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def employee_params
       params.require(:employee).permit(:first_name, :string, :last_name, :birth_date, :start_date, :email, :city, :country, :street, :zipcode, :number, :state, :district)
+    end
+
+    def employees_service
+      @employees_service ||= EmployeesService.new
     end
 end
