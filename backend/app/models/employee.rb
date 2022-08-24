@@ -1,5 +1,7 @@
 class Employee < ApplicationRecord
 
+  belongs_to :department, class_name: "Department", foreign_key: "department_id"
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birth_date, presence: true

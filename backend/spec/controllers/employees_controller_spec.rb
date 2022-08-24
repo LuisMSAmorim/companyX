@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe EmployeesController, type: :controller do
 
   before(:all) do
-    @employee = create(:employee)
+    @department = create(:department)
+    @employee = create(:employee, department: @department)
   end
 
   describe "#index" do
@@ -28,7 +29,7 @@ RSpec.describe EmployeesController, type: :controller do
 
   describe "#create" do
     context "when successful" do
-      subject { post :create, params: { employee: attributes_for(:employee) } }
+      subject { post :create, params: { employee: attributes_for(:employee, department_id: @department.id) } }
       it "returns http status created" do
         expect(subject).to have_http_status(:created)
       end
@@ -40,7 +41,7 @@ RSpec.describe EmployeesController, type: :controller do
       end
     end
     context "when failure" do
-      subject { post :create, params: { employee: attributes_for(:employee, first_name: nil) } }
+      subject { post :create, params: { employee: attributes_for(:employee, first_name: nil, department_id: @department.id) } }
       it "returns http status unprocessable_entity" do
         expect(subject).to have_http_status(:unprocessable_entity)
       end

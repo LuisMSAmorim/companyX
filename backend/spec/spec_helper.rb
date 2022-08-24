@@ -1,5 +1,7 @@
 require 'simplecov'
 
+require 'support/database_cleaner'
+
 SimpleCov.start 'rails' do
   add_group 'Services', 'app/services'
   add_filter '/exceptions/'

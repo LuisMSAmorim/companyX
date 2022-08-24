@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Employee, type: :model do
 
   before(:all) do
-    @employee = create(:employee)
+    @department = create(:department)
+    @employee = create(:employee, department: @department)
   end
 
   describe '#validations' do
@@ -19,6 +20,10 @@ RSpec.describe Employee, type: :model do
     it { should validate_presence_of(:number) }
     it { should validate_presence_of(:state) }
     it { should validate_presence_of(:district) }
+  end
+
+  describe "#associations" do
+    it { should belong_to(:department) }
   end
 
   describe '#name' do

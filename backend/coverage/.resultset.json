@@ -23,9 +23,9 @@
           6,
           null,
           6,
-          3,
+          0,
           null,
-          3,
+          6,
           null,
           null,
           null,
@@ -70,6 +70,8 @@
           1,
           null,
           1,
+          null,
+          1,
           1,
           1,
           1,
@@ -91,6 +93,14 @@
       "/app/app/models/application_record.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/app/app/models/department.rb": {
+        "lines": [
+          1,
+          null,
           1,
           null
         ]
@@ -131,6 +141,63 @@
         "branches": {
         }
       },
+      "/app/app/controllers/departments_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/app/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -155,6 +222,6 @@
         }
       }
     },
-    "timestamp": 1661294372
+    "timestamp": 1661345520
   }
 }
