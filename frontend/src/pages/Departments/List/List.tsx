@@ -2,7 +2,12 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { DepartmentCard, DepartmentList, DepartmentListBody } from './styles'
+import {
+  DepartmentCard,
+  DepartmentHeader,
+  DepartmentList,
+  DepartmentListBody,
+} from './styles'
 
 interface Department {
   id: number
@@ -20,7 +25,10 @@ export function List() {
 
   return (
     <DepartmentList>
-      <h1>Departmentos</h1>
+      <DepartmentHeader>
+        <h1>Departamentos</h1>
+        <NavLink to="/departments/new">Novo Departamento</NavLink>
+      </DepartmentHeader>
       <DepartmentListBody>
         {departments.map((department: Department) => {
           return (
