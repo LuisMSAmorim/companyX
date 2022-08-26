@@ -5,6 +5,7 @@ export const SidebarContainer = styled.aside`
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  height: calc(100vh - 7vh);
+  height: 100%;
+  min-height: 93vh;
   background: ${(props) => props.theme['blue-700']};
 `

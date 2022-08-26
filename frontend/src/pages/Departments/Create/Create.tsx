@@ -10,7 +10,7 @@ import {
 
 const apiUrl = 'http://localhost:5000/'
 
-export function Create() {
+export function CreateDepartment() {
   const {
     register,
     handleSubmit,
