@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { NavLink, useLocation, useParams } from 'react-router-dom'
 
 import {
   EmployeeCard,
@@ -35,6 +35,7 @@ export function ListDepartmentEmployees() {
     <ListDepartmentEmployeesContainer>
       <ListDepartmentEmployeesHeader>
         <h1>{departmentName}</h1>
+        <NavLink to="/employees/new">Novo Colaborador</NavLink>
       </ListDepartmentEmployeesHeader>
       
       <ListDepartmentEmployeesBody>
@@ -42,7 +43,7 @@ export function ListDepartmentEmployees() {
           return (
             <EmployeeCard key={employee.id}>
               <h2>{`${employee.first_name} ${employee.last_name}`}</h2>
-              <h3>Senior Developer</h3>
+              <h3>{employee.role}</h3>
               <h4>{employee.email}</h4>
             </EmployeeCard>
           )

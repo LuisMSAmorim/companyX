@@ -21,6 +21,17 @@ export const ListDepartmentEmployeesHeader = styled.header`
     font-size: 3rem;
     font-weight: bold;
   }
+
+  a {
+    background: red;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background: ${(props) => props.theme['blue-700']};
+    color: ${(props) => props.theme.white};
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 `
 
 export const ListDepartmentEmployeesBody = styled.div`

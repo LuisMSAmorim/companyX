@@ -36,7 +36,7 @@ export function ListDepartments() {
                   state={{ departmentName: department.name }}
                   to={`${department.id}/employees`}
                 >
-                  Funcionários
+                  Colaboradores
                 </NavLink>
                 <NavLink to="/">Deletar</NavLink>
                 <NavLink to="/">Atualizar</NavLink>
