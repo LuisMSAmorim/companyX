@@ -48,10 +48,17 @@ export const CreateDepartmentListBody = styled.div`
     flex-direction: column;
     width: 100vh;
 
+    span {
+      background: ${(props) => props.theme.red};
+      margin-bottom: 1vh;
+      text-align: center;
+      border-radius: 8px;
+    }
+
     input {
       height: 5vh;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
     input[type='submit'] {
@@ -62,6 +69,7 @@ export const CreateDepartmentListBody = styled.div`
       color: ${(props) => props.theme.white};
       font-weight: bold;
       cursor: pointer;
+      border: none;
     }
   }
 `

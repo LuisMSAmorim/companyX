@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
-import { CreateDepartmentContainer, CreateDepartmentHeader, CreateDepartmentListBody } from './styles'
+import {
+  CreateDepartmentContainer,
+  CreateDepartmentHeader,
+  CreateDepartmentListBody,
+} from './styles'
 
 const apiUrl = 'http://localhost:5000/'
 
@@ -13,10 +17,12 @@ export function Create() {
     formState: { errors },
   } = useForm()
 
+  const navigate = useNavigate()
+
   function onSubmit(data: any) {
-    axios.post(`${apiUrl}/departments`, data)
-    console.log(errors)
-    console.log(data)
+    axios.post(`${apiUrl}/departments`, data).then(() => {
+      navigate('/departments')
+    })
   }
 
   return (
@@ -27,13 +33,12 @@ export function Create() {
       </CreateDepartmentHeader>
       <CreateDepartmentListBody>
         <form onSubmit={handleSubmit(onSubmit)}>
+          {errors.name && <span>Digite o nome do departamento</span>}
           <input
             type="text"
             placeholder="Digite o nome do departamento"
-            required
             {...register('name', { required: true, min: 2 })}
           />
-
           <input type="submit" />
         </form>
       </CreateDepartmentListBody>
