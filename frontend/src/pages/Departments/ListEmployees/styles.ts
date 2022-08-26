@@ -50,6 +50,7 @@ export const EmployeeCard = styled.div`
   align-items: center;
   justify-content: center;
   flex-basis: auto;
+  text-align: center;
 
   background: ${(props) => props.theme['purple-700']};
   max-width: 40vh;
@@ -57,7 +58,7 @@ export const EmployeeCard = styled.div`
   margin-top: 2vh;
   border-radius: 8px;
 
-  color: ${(props) => props.theme.white};;
+  color: ${(props) => props.theme.white};
 
   h2 {
     font-size: 1.5rem;

@@ -28,7 +28,7 @@ export function CreateDepartment() {
   return (
     <CreateDepartmentContainer>
       <CreateDepartmentHeader>
-        <h1>Criar Departamento</h1>
+        <h1>Novo Departamento</h1>
         <NavLink to="/departments/">Voltar</NavLink>
       </CreateDepartmentHeader>
       <CreateDepartmentListBody>

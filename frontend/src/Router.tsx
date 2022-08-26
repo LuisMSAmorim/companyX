@@ -4,6 +4,7 @@ import { DefaultLayout } from './layouts/DefaultLayout/DefaultLayout'
 import { CreateDepartment } from './pages/Departments/Create/Create'
 import { ListDepartments } from './pages/Departments/List/List'
 import { ListDepartmentEmployees } from './pages/Departments/ListEmployees/ListEmployees'
+import { CreateEmployee } from './pages/Employees/Create/Create'
 
 export function Router() {
   return (
@@ -15,6 +16,7 @@ export function Router() {
           path="/departments/:id/employees"
           element={<ListDepartmentEmployees />}
         />
+      <Route path="/employees/new" element={<CreateEmployee />}/>
       </Route>
     </Routes>
   )

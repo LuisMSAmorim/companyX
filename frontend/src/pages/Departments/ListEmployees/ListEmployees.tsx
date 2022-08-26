@@ -37,7 +37,7 @@ export function ListDepartmentEmployees() {
         <h1>{departmentName}</h1>
         <NavLink to="/employees/new">Novo Colaborador</NavLink>
       </ListDepartmentEmployeesHeader>
-      
+
       <ListDepartmentEmployeesBody>
         {employees.map((employee: Employee) => {
           return (

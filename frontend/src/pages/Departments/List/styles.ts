@@ -51,6 +51,7 @@ export const DepartmentCard = styled.div`
   align-items: center;
   justify-content: center;
   flex-basis: auto;
+  text-align: center;
 
   background: ${(props) => props.theme['purple-700']};
   max-width: 40vh;
