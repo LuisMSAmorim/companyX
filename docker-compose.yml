@@ -15,11 +15,11 @@ services:
     build: 
       context: ./backend
       dockerfile: Dockerfile
-    command: bundle exec rails s -p 5000 -b 0.0.0.0
     volumes:
       - ./backend:/app
     ports:
       - "5000:5000"
+      - "1234:1234"
     depends_on:
       - db
 
