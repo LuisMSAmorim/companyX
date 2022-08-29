@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - config/**/*
+    - db/migrate/**/*
+    - 'Gemfile'
+    - 'bin/*'
+Metrics/LineLength:
+   Max: 150
+Metrics/CyclomaticComplexity:
+   Enabled: true
+   Max: 3
+Metrics/MethodLength:
+    Max: 10
+    CountComments: false
+Metrics/BlockLength:
+   Max: 100
+Metrics/AbcSize:
+   Max: 30
