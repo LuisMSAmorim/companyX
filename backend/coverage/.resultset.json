@@ -194,26 +194,6 @@
           null
         ]
       },
-      "/app/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/app/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/app/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -225,6 +205,6 @@
         }
       }
     },
-    "timestamp": 1661781864
+    "timestamp": 1661783125
   }
 }
