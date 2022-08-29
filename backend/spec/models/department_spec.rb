@@ -13,7 +13,7 @@ RSpec.describe Department, type: :model do
   end
 
   describe "#associations" do
-    it { should have_many(:employees) }
+    it { should have_many(:employees).dependent(:destroy) }
   end
 
   describe "#employees" do
