@@ -6,7 +6,7 @@ class Employee < ApplicationRecord
   validates :role, presence: true
   validates :birth_date, presence: true
   validates :start_date, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: URI::MailTo::EMAIL_REGEXP
   validates :city, presence: true
   validates :state, presence: true
   validates :zipcode, presence: true
@@ -19,7 +19,7 @@ class Employee < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
-  def change_vacation_status(params) 
-    self.update(is_on_vacation: params)
+  def change_vacation_status(params)
+    update(is_on_vacation: params)
   end
 end

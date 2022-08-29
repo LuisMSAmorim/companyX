@@ -93,7 +93,7 @@ RSpec.describe EmployeesController, type: :controller do
   end
 
   describe '#update_vacation_status' do
-    context "when start vacations" do
+    context 'when start vacations' do
       subject { patch :update_vacation_status, params: { id: @employee.id, start_vacation: true } }
       it 'returns http status no_content' do
         expect(subject).to have_http_status(:no_content)
@@ -102,7 +102,7 @@ RSpec.describe EmployeesController, type: :controller do
         expect { subject }.to change { @employee.reload.is_on_vacation }.to(true)
       end
     end
-    context "when finish vacations" do
+    context 'when finish vacations' do
       subject { patch :update_vacation_status, params: { id: @employee_on_vacations.id, start_vacation: false } }
       it 'returns http status no_content' do
         expect(subject).to have_http_status(:no_content)
