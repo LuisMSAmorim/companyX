@@ -30,4 +30,19 @@ RSpec.describe Employee, type: :model do
       expect(@employee.name).to eq("#{@employee.first_name} #{@employee.last_name}")
     end
   end
+
+  describe '#change_vacation_status' do
+    context 'when param is true' do
+      it 'updates the is_on_vacation attribute to true' do
+        @employee.change_vacation_status(true)
+        expect(@employee.reload.is_on_vacation).to be_truthy
+      end
+    end
+    context 'when param is false' do
+      it 'updates the is_on_vacation attribute to true' do
+        @employee.change_vacation_status(false)
+        expect(@employee.reload.is_on_vacation).to be_falsey
+      end
+    end
+  end
 end

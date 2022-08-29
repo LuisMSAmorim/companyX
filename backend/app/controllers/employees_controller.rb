@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: %i[show update destroy]
+  before_action :set_employee, only: %i[show update destroy update_vacation_status]
 
   # GET /employees
   def index
@@ -36,6 +36,11 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1
   def destroy
     @employee.destroy
+  end
+
+  # PATCH /employees/1/update_vacation_status
+  def update_vacation_status
+    @employee.change_vacation_status(params[:start_vacation])
   end
 
   private

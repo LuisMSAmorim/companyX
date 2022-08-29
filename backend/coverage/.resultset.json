@@ -49,6 +49,7 @@
           null,
           null,
           1,
+          null,
           1,
           12,
           null,
@@ -107,14 +108,20 @@
           2,
           null,
           null,
+          null,
+          1,
+          4,
+          null,
+          null,
           1,
           null,
           1,
-          10,
+          14,
           null,
           null,
           1,
           12,
+          null,
           null,
           null,
           1,
@@ -126,7 +133,6 @@
       "/app/app/models/department.rb": {
         "lines": [
           1,
-          null,
           1,
           null,
           1,
@@ -147,7 +153,6 @@
       "/app/app/models/employee.rb": {
         "lines": [
           1,
-          null,
           1,
           null,
           1,
@@ -166,6 +171,10 @@
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          6,
           null,
           null
         ]
@@ -173,7 +182,6 @@
       "/app/app/services/employees_service.rb": {
         "lines": [
           1,
-          null,
           1,
           6,
           null,
@@ -217,6 +225,6 @@
         }
       }
     },
-    "timestamp": 1661778204
+    "timestamp": 1661781864
   }
 }

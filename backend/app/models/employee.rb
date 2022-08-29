@@ -18,4 +18,8 @@ class Employee < ApplicationRecord
   def name
     "#{first_name} #{last_name}"
   end
+
+  def change_vacation_status(params) 
+    self.update(is_on_vacation: params)
+  end
 end

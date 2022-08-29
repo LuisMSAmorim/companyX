@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     get :employees, on: :member
   end
 
-  resources :employees
+  resources :employees do
+    patch :update_vacation_status, on: :member
+  end
 end

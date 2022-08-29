@@ -4,6 +4,7 @@ RSpec.describe EmployeesController, type: :controller do
   before(:all) do
     @department = create(:department)
     @employee = create(:employee, department: @department)
+    @employee_on_vacations = create(:employee, department: @department, is_on_vacation: true)
   end
 
   describe '#index' do
@@ -40,9 +41,7 @@ RSpec.describe EmployeesController, type: :controller do
       end
     end
     context 'when failure' do
-      subject do
-        post :create, params: { employee: attributes_for(:employee, first_name: nil, department_id: @department.id) }
-      end
+      subject { post :create, params: { employee: attributes_for(:employee, first_name: nil, department_id: @department.id) } }
       it 'returns http status unprocessable_entity' do
         expect(subject).to have_http_status(:unprocessable_entity)
       end
@@ -66,7 +65,7 @@ RSpec.describe EmployeesController, type: :controller do
         expect(subject).to have_http_status(:ok)
       end
       it 'updates the employee' do
-        expect { subject }.to change { Employee.last.first_name }.to('New Name')
+        expect { subject }.to change { @employee.reload.first_name }.to('New Name')
       end
     end
     context 'when failure' do
@@ -78,7 +77,7 @@ RSpec.describe EmployeesController, type: :controller do
         expect(subject.body).to eq({ first_name: ["can't be blank"] }.to_json)
       end
       it 'does not update the employee' do
-        expect { subject }.to_not change { @employee.first_name }
+        expect { subject }.to_not change { @employee.reload.first_name }
       end
     end
   end
@@ -90,6 +89,27 @@ RSpec.describe EmployeesController, type: :controller do
     end
     it 'deletes the employee' do
       expect { subject }.to change { Employee.count }.by(-1)
+    end
+  end
+
+  describe '#update_vacation_status' do
+    context "when start vacations" do
+      subject { patch :update_vacation_status, params: { id: @employee.id, start_vacation: true } }
+      it 'returns http status no_content' do
+        expect(subject).to have_http_status(:no_content)
+      end
+      it 'updates the employee' do
+        expect { subject }.to change { @employee.reload.is_on_vacation }.to(true)
+      end
+    end
+    context "when finish vacations" do
+      subject { patch :update_vacation_status, params: { id: @employee_on_vacations.id, start_vacation: false } }
+      it 'returns http status no_content' do
+        expect(subject).to have_http_status(:no_content)
+      end
+      it 'updates the employee' do
+        expect { subject }.to change { @employee_on_vacations.reload.is_on_vacation }.to(false)
+      end
     end
   end
 end

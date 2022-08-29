@@ -14,5 +14,6 @@ FactoryBot.define do
     state { Faker::Address.state }
     district { Faker::Address.community }
     role { Faker::Job.title }
+    is_on_vacation { false }
   end
 end
