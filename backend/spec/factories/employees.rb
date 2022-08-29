@@ -13,5 +13,6 @@ FactoryBot.define do
     number { Faker::Address.building_number }
     state { Faker::Address.state }
     district { Faker::Address.community }
+    role { Faker::Job.title }
   end
 end

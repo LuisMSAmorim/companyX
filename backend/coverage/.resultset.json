@@ -162,6 +162,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -205,19 +206,6 @@
         "branches": {
         }
       },
-      "/app/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/app/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -229,6 +217,6 @@
         }
       }
     },
-    "timestamp": 1661519089
+    "timestamp": 1661775561
   }
 }
