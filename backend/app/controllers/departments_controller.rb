@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-  before_action :set_department, only: %i[ show update destroy employees ]
+  before_action :set_department, only: %i[show update destroy employees]
 
   # GET /departments
   def index
@@ -44,11 +44,12 @@ class DepartmentsController < ApplicationController
   end
 
   private
-    def set_department
-      @department = Department.find(params[:id])
-    end
 
-    def department_params
-      params.require(:department).permit(:name)
-    end
+  def set_department
+    @department = Department.find(params[:id])
+  end
+
+  def department_params
+    params.require(:department).permit(:name)
+  end
 end

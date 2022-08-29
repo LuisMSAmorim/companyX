@@ -1,6 +1,5 @@
 class Employee < ApplicationRecord
-
-  belongs_to :department, class_name: "Department", foreign_key: "department_id"
+  belongs_to :department, class_name: 'Department', foreign_key: 'department_id'
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -16,7 +15,7 @@ class Employee < ApplicationRecord
   validates :district, presence: true
   validates :number, presence: true
 
-  def name 
-    "#{self.first_name} #{self.last_name}"
+  def name
+    "#{first_name} #{last_name}"
   end
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Employee, type: :model do
-
   before(:all) do
     @department = create(:department)
     @employee = create(:employee, department: @department)
@@ -22,7 +21,7 @@ RSpec.describe Employee, type: :model do
     it { should validate_presence_of(:district) }
   end
 
-  describe "#associations" do
+  describe '#associations' do
     it { should belong_to(:department) }
   end
 
