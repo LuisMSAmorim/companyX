@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
 
   # POST /employees
   def create
-    @employee = Employee.new(params)
+    @employee = Employee.new(employee_params)
 
     if @employee.save
       render json: @employee, status: :created, location: @employee
