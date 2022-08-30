@@ -10,11 +10,48 @@
           1,
           null,
           1,
-          54,
-          54,
+          56,
+          56,
           null,
           null,
           1,
+          54,
+          54,
+          null,
+          null
+        ]
+      },
+      "/app/app/controllers/authentication_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/app/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          54,
+          54,
           54,
           54,
           null,
@@ -76,24 +113,6 @@
           null,
           1,
           12,
-          null,
-          null
-        ]
-      },
-      "/app/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          54,
-          54,
-          54,
-          54,
           null,
           null
         ]
@@ -283,27 +302,6 @@
           null
         ]
       },
-      "/app/app/controllers/authentication_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/app/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -315,6 +313,6 @@
         }
       }
     },
-    "timestamp": 1661864438
+    "timestamp": 1661864848
   }
 }
