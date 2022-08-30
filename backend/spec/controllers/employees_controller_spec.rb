@@ -46,12 +46,12 @@ RSpec.describe EmployeesController, type: :controller do
       end
     end
     context 'when failure' do
-      subject { post :create, params: { employee: attributes_for(:employee, first_name: nil, department_id: @department.id) } }
+      subject { post :create, params: { employee: attributes_for(:employee, name: nil, department_id: @department.id) } }
       it 'returns http status unprocessable_entity' do
         expect(subject).to have_http_status(:unprocessable_entity)
       end
       it 'returns the errors' do
-        expect(subject.body).to eq({ first_name: ["can't be blank"] }.to_json)
+        expect(subject.body).to eq({ name: ["can't be blank"] }.to_json)
       end
       it 'does not create a new employee' do
         expect { subject }.to_not change { Employee.count }
@@ -61,7 +61,7 @@ RSpec.describe EmployeesController, type: :controller do
 
   describe '#update' do
     context 'when successful' do
-      subject { patch :update, params: { id: @employee.id, employee: { first_name: 'New Name' } } }
+      subject { patch :update, params: { id: @employee.id, employee: { name: 'New Name' } } }
       it 'returns the updated employee' do
         parsed_response = JSON.parse(subject.body)
         expect(parsed_response['id']).to eq(@employee.id)
@@ -70,19 +70,19 @@ RSpec.describe EmployeesController, type: :controller do
         expect(subject).to have_http_status(:ok)
       end
       it 'updates the employee' do
-        expect { subject }.to change { @employee.reload.first_name }.to('New Name')
+        expect { subject }.to change { @employee.reload.name }.to('New Name')
       end
     end
     context 'when failure' do
-      subject { patch :update, params: { id: @employee.id, employee: { first_name: nil } } }
+      subject { patch :update, params: { id: @employee.id, employee: { name: nil } } }
       it 'returns http status unprocessable_entity' do
         expect(subject).to have_http_status(:unprocessable_entity)
       end
       it 'returns the errors' do
-        expect(subject.body).to eq({ first_name: ["can't be blank"] }.to_json)
+        expect(subject.body).to eq({ name: ["can't be blank"] }.to_json)
       end
       it 'does not update the employee' do
-        expect { subject }.to_not change { @employee.reload.first_name }
+        expect { subject }.to_not change { @employee.reload.name }
       end
     end
   end

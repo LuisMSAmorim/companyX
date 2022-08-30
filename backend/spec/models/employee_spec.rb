@@ -7,9 +7,7 @@ RSpec.describe Employee, type: :model do
   end
 
   describe '#validations' do
-    it { should validate_presence_of(:first_name) }
-    it { should validate_presence_of(:last_name) }
-    it { should validate_presence_of(:birth_date) }
+    it { should validate_presence_of(:name) }
     it { should validate_presence_of(:start_date) }
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email) }
@@ -29,12 +27,6 @@ RSpec.describe Employee, type: :model do
 
   describe '#associations' do
     it { should belong_to(:department) }
-  end
-
-  describe '#name' do
-    it 'returns the full name of the employee' do
-      expect(@employee.name).to eq("#{@employee.first_name} #{@employee.last_name}")
-    end
   end
 
   describe '#change_vacation_status' do

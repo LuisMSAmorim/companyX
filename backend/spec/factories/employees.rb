@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :employee do
     department
-    first_name { Faker::Name.first_name }
-    last_name { Faker::Name.last_name }
+    name { Faker::Name.name }
     birth_date { Faker::Date.birthday(min_age: 18, max_age: 65) }
     start_date { Faker::Date.between(from: Date.today, to: 1.year.ago) }
     email { Faker::Internet.email }
