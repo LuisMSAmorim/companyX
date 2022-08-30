@@ -1,6 +1,26 @@
 {
   "RSpec": {
     "coverage": {
+      "/app/app/controllers/concerns/json_web_token.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          42,
+          42,
+          null,
+          null,
+          1,
+          42,
+          42,
+          null,
+          null
+        ]
+      },
       "/app/app/controllers/departments_controller.rb": {
         "lines": [
           1,
@@ -8,54 +28,54 @@
           null,
           null,
           1,
-          0,
+          2,
           null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
+          2,
           null,
           null,
           null,
           1,
-          0,
+          2,
           null,
           null,
           null,
           1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
+          2,
           null,
           null,
           null,
           1,
-          0,
-          0,
+          6,
           null,
-          0,
+          6,
+          3,
+          null,
+          3,
           null,
           null,
           null,
           null,
           1,
-          0,
+          6,
+          3,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
           null,
           null,
           1,
           null,
           1,
-          0,
+          12,
           null,
           null,
           1,
-          0,
+          12,
           null,
           null
         ]
@@ -73,27 +93,7 @@
           42,
           42,
           42,
-          0,
-          null,
-          null
-        ]
-      },
-      "/app/app/controllers/concerns/json_web_token.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
           42,
-          0,
           null,
           null
         ]
@@ -105,59 +105,59 @@
           null,
           null,
           1,
-          0,
+          2,
           null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
+          2,
           null,
           null,
           null,
           1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
+          2,
           null,
           null,
           null,
           1,
-          0,
-          0,
+          6,
           null,
-          0,
+          6,
+          3,
+          null,
+          3,
           null,
           null,
           null,
           null,
           1,
-          0,
+          6,
+          3,
           null,
+          3,
           null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
           null,
           null,
           null,
           1,
-          0,
+          2,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          14,
+          null,
+          null,
+          1,
+          12,
+          null,
+          null,
+          null,
+          1,
+          6,
           null,
           null
         ]
@@ -170,7 +170,7 @@
           1,
           null,
           1,
-          1,
+          4,
           null,
           null
         ]
@@ -206,7 +206,7 @@
           null,
           null,
           1,
-          2,
+          6,
           null,
           null
         ]
@@ -219,6 +219,21 @@
           1,
           null,
           1,
+          1,
+          null
+        ]
+      },
+      "/app/app/services/employees_service.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/app/app/services/application_service.rb": {
+        "lines": [
           1,
           null
         ]
@@ -309,27 +324,8 @@
         ],
         "branches": {
         }
-      },
-      "/app/app/services/application_service.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/app/app/services/employees_service.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1661799372
+    "timestamp": 1661863734
   }
 }

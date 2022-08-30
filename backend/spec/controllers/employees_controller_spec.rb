@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe EmployeesController, type: :controller do
   before(:all) do
+    @user = create(:user)
     @department = create(:department)
     @employee = create(:employee, department: @department)
     @employee_on_vacations = create(:employee, department: @department, is_on_vacation: true)
+  end
+
+  before(:each) do
+    authenticate(@user)
   end
 
   describe '#index' do

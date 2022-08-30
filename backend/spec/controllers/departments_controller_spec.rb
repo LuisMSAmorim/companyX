@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe DepartmentsController, type: :controller do
   before(:all) do
+    @user = create(:user)
     @department = create(:department, :with_employees)
+  end
+
+  before(:each) do
+    authenticate(@user)
   end
 
   describe '#index' do
