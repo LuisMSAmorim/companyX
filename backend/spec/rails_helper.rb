@@ -31,5 +31,5 @@ RSpec.configure do |config|
     end
   end
 
-  config.include ControllerSpecHelpers, :type => :controller
+  config.include ControllerSpecHelpers, type: :controller
 end
