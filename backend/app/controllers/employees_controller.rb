@@ -38,11 +38,6 @@ class EmployeesController < ApplicationController
     @employee.destroy
   end
 
-  # PATCH /employees/1/update_vacation_status
-  def update_vacation_status
-    @employee.change_vacation_status(params[:start_vacation])
-  end
-
   private
 
   def set_employee

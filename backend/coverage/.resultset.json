@@ -10,13 +10,13 @@
           1,
           null,
           1,
-          84,
-          84,
+          80,
+          80,
           null,
           null,
           1,
-          82,
-          82,
+          78,
+          78,
           null,
           null
         ]
@@ -50,10 +50,10 @@
           1,
           null,
           1,
-          82,
-          82,
-          82,
-          82,
+          78,
+          78,
+          78,
+          78,
           null,
           null
         ]
@@ -159,15 +159,10 @@
           2,
           null,
           null,
-          null,
-          1,
-          4,
-          null,
-          null,
           1,
           null,
           1,
-          14,
+          10,
           null,
           null,
           1,
@@ -254,24 +249,20 @@
           null,
           null,
           1,
-          null,
           11,
           null,
           3,
-          8,
-          4,
           null,
           4,
           null,
+          4,
           null,
           null,
           null,
           1,
-          null,
           6,
-          3,
-          3,
           null,
+          3,
           null,
           null,
           1,
@@ -332,9 +323,6 @@
           1,
           1,
           null,
-          1,
-          6,
-          null,
           null
         ]
       },
@@ -363,7 +351,6 @@
       "/app/app/services/vacations_service.rb": {
         "lines": [
           1,
-          null,
           1,
           4,
           null,
@@ -395,7 +382,6 @@
       "/app/app/services/application_service.rb": {
         "lines": [
           1,
-          null,
           1,
           null,
           1,
@@ -409,7 +395,6 @@
       "/app/app/repositories/vacations_repository.rb": {
         "lines": [
           1,
-          null,
           1,
           6,
           null,
@@ -441,6 +426,6 @@
         }
       }
     },
-    "timestamp": 1661953194
+    "timestamp": 1661953711
   }
 }

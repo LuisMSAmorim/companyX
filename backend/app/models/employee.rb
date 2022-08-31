@@ -13,8 +13,5 @@ class Employee < ApplicationRecord
   validates :country, presence: true
   validates :district, presence: true
   validates :number, presence: true
-
-  def change_vacation_status(params)
-    update(is_on_vacation: params)
-  end
+  
 end

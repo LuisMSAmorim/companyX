@@ -1,5 +1,4 @@
 class VacationsService < ApplicationService
-
   def get_all
     vacations_repository.get_all
   end
@@ -9,14 +8,14 @@ class VacationsService < ApplicationService
   end
 
   def update(vacation, params)
-    raise Unprocessable.new("Just future vacations can be updated") if date_is_in_past(params[:start_date])
+    raise Unprocessable, 'Just future vacations can be updated' if date_is_in_past(params[:start_date])
 
     vacation.update(params)
   end
 
   def destroy(vacation)
-    raise Unprocessable.new("Just future vacations can be deleted") if date_is_in_past(vacation.start_date)
-      
+    raise Unprocessable, 'Just future vacations can be deleted' if date_is_in_past(vacation.start_date)
+
     vacation.destroy
   end
 

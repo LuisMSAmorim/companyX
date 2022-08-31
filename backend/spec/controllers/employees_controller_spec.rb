@@ -5,7 +5,6 @@ RSpec.describe EmployeesController, type: :controller do
     @user = create(:user)
     @department = create(:department)
     @employee = create(:employee, department: @department)
-    @employee_on_vacations = create(:employee, department: @department, is_on_vacation: true)
   end
 
   before(:each) do
@@ -94,27 +93,6 @@ RSpec.describe EmployeesController, type: :controller do
     end
     it 'deletes the employee' do
       expect { subject }.to change { Employee.count }.by(-1)
-    end
-  end
-
-  describe '#update_vacation_status' do
-    context 'when start vacations' do
-      subject { patch :update_vacation_status, params: { id: @employee.id, start_vacation: true } }
-      it 'returns http status no_content' do
-        expect(subject).to have_http_status(:no_content)
-      end
-      it 'updates the employee' do
-        expect { subject }.to change { @employee.reload.is_on_vacation }.to(true)
-      end
-    end
-    context 'when finish vacations' do
-      subject { patch :update_vacation_status, params: { id: @employee_on_vacations.id, start_vacation: false } }
-      it 'returns http status no_content' do
-        expect(subject).to have_http_status(:no_content)
-      end
-      it 'updates the employee' do
-        expect { subject }.to change { @employee_on_vacations.reload.is_on_vacation }.to(false)
-      end
     end
   end
 end

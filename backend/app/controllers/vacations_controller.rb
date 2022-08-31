@@ -1,5 +1,5 @@
 class VacationsController < ApplicationController
-  before_action :set_vacation, only: %i[ show update destroy ]
+  before_action :set_vacation, only: %i[show update destroy]
 
   # GET /vacations
   def index
@@ -11,7 +11,7 @@ class VacationsController < ApplicationController
   # GET /vacations/1
   def show
     @vacation = vacations_service.get_by_id(params[:id])
-    
+
     render json: @vacation
   end
 
@@ -28,24 +28,20 @@ class VacationsController < ApplicationController
 
   # PATCH/PUT /vacations/1
   def update
-    begin
-      vacations_service.update(@vacation, update_params)
+    vacations_service.update(@vacation, update_params)
 
-      render json: @vacation
-    rescue ApplicationService::Unprocessable => e
-      render json: { errors: e }, status: :unprocessable_entity
-    rescue => e
-      render json: { errors: @vacation.errors }, status: :unprocessable_entity      
-    end
+    render json: @vacation
+  rescue ApplicationService::Unprocessable => e
+    render json: { errors: e }, status: :unprocessable_entity
+  rescue StandardError => e
+    render json: { errors: @vacation.errors }, status: :unprocessable_entity
   end
 
   # DELETE /vacations/1
   def destroy
-    begin
-      vacations_service.destroy(@vacation)
-    rescue ApplicationService::Unprocessable => e
-      render json: { errors: e }, status: :unprocessable_entity
-    end
+    vacations_service.destroy(@vacation)
+  rescue ApplicationService::Unprocessable => e
+    render json: { errors: e }, status: :unprocessable_entity
   end
 
   private
