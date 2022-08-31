@@ -1,4 +1,4 @@
-class StartVacationStatus
+class FinishVacationStatus
   include Sidekiq::Job
   sidekiq_options queue: 'FinishVacationStatus'
 
