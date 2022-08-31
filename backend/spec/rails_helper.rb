@@ -5,7 +5,9 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+
 require 'support/controller_spec_helpers'
+require 'support/sidekiq'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
