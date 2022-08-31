@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   resources :vacations
   resources :departments do
@@ -10,4 +12,6 @@ Rails.application.routes.draw do
 
   resources :users
   post '/auth/login', to: 'authentication#login'
+
+  mount Sidekiq::Web => '/sidekiq'
 end

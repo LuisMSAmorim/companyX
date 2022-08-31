@@ -9,6 +9,14 @@ services:
     ports:
       - "5432:5432"
 
+  redis:
+    image: 'redis:7-alpine'
+    command: redis-server
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis:/data'
+
   backend:
     stdin_open: true
     container_name: companyx_api
@@ -22,6 +30,7 @@ services:
       - "1234:1234"
     depends_on:
       - db
+      - redis
 
   frontend:
     stdin_open: true
@@ -36,3 +45,7 @@ services:
       - "5001:5001"
     depends_on:
       - backend
+
+volumes:
+  postgres:
+  redis:
