@@ -9,14 +9,13 @@ class VacationsService < ApplicationService
   end
 
   def update(vacation, params)
-    return raise Unauthorized if date_is_in_past(params[:start_date])
+    raise Unprocessable.new("Just future vacations can be updated") if date_is_in_past(params[:start_date])
 
     vacation.update(params)
   end
 
   def destroy(vacation)
-    vacation_start_date = vacation.start_date
-    return raise Unauthorized if date_is_in_past(vacation_start_date)
+    raise Unprocessable.new("Just future vacations can be deleted") if date_is_in_past(vacation.start_date)
       
     vacation.destroy
   end

@@ -30,10 +30,10 @@ RSpec.describe VacationsService, type: :service do
     end
     context "when the vacation start_date is in the past" do
       subject { @service.update(@vacation, start_date: Date.today - 1.day) }
-      it "raises an Unauthorized error" do
+      it "raises an Unprocessable error" do
         expect {
           subject
-        }.to raise_error(ApplicationService::Unauthorized)
+        }.to raise_error(ApplicationService::Unprocessable)
       end
     end
   end
@@ -51,10 +51,10 @@ RSpec.describe VacationsService, type: :service do
         @past_vacation.save(validate: false)
       end
       subject { @service.destroy(@past_vacation) }
-      it "raises an Unauthorized error" do
+      it "raises an Unprocessable error" do
         expect {
           subject
-        }.to raise_error(ApplicationService::Unauthorized)
+        }.to raise_error(ApplicationService::Unprocessable)
       end
     end
   end

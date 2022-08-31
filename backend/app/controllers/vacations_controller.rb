@@ -32,8 +32,8 @@ class VacationsController < ApplicationController
       vacations_service.update(@vacation, update_params)
 
       render json: @vacation
-    rescue ApplicationService::Unauthorized => e
-      render json: { errors: e }, status: :unauthorized
+    rescue ApplicationService::Unprocessable => e
+      render json: { errors: e }, status: :unprocessable_entity
     rescue => e
       render json: { errors: @vacation.errors }, status: :unprocessable_entity      
     end
@@ -43,8 +43,8 @@ class VacationsController < ApplicationController
   def destroy
     begin
       vacations_service.destroy(@vacation)
-    rescue ApplicationService::Unauthorized => e
-      render json: { errors: e }, status: :unauthorized
+    rescue ApplicationService::Unprocessable => e
+      render json: { errors: e }, status: :unprocessable_entity
     end
   end
 

@@ -1,11 +1,10 @@
 class ApplicationService
 
-  class Unauthorized < StandardError; end
+  class Unprocessable < StandardError; end
 
   protected 
   
   def date_is_in_past(date)
-    byebug
-    Date.today > date
+    Date.today > date.to_date
   end
 end
