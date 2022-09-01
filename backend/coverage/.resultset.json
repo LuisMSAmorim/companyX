@@ -285,6 +285,24 @@
           null
         ]
       },
+      "/app/app/jobs/update_employee_vacation_status.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          2,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
       "/app/app/models/department.rb": {
         "lines": [
           1,
@@ -387,10 +405,6 @@
           1,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
           21,
           null,
           null
@@ -419,26 +433,6 @@
           null
         ]
       },
-      "/app/app/jobs/update_employee_vacation_status.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/app/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -450,6 +444,6 @@
         }
       }
     },
-    "timestamp": 1662038230
+    "timestamp": 1662038635
   }
 }

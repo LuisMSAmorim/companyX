@@ -1,6 +1,6 @@
 class UpdateEmployeeVacationStatus
   include Sidekiq::Job
-  sidekiq_options queue: 'UpdateVacationStatus'
+  sidekiq_options queue: 'UpdateEmployeeVacationStatus'
 
   def perform
     start_vacation_employee_ids = Vacation.where(start_date: Date.today).pluck(:employee_id)
