@@ -13,5 +13,9 @@ RSpec.describe Vacation, type: :model do
       vacation = Vacation.create(start_date: Date.today, end_date: Date.today - 1.day, employee_id: @employee.id)
       expect(vacation).to_not be_valid
     end
+    it 'should validate that start_date is on the past' do
+      vacation = Vacation.create(start_date: Date.yesterday, end_date: Date.tomorrow, employee_id: @employee.id)
+      expect(vacation).to_not be_valid
+    end
   end
 end

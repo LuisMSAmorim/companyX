@@ -1,5 +1,8 @@
 :pidfile: tmp/pids/sidekiq.pid
 :queues:
-  - [StartVacationStatus, 1]
-  - [FinishVacationStatus, 1]
+  - [UpdateEmployeeVacationStatus, 1]
 
+:schedule:
+  UpdateEmployeeVacationStatus:
+    cron: '0 0 * * *'
+    class: UpdateEmployeeVacationStatus
