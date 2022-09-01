@@ -13,5 +13,4 @@ class Employee < ApplicationRecord
   validates :country, presence: true
   validates :district, presence: true
   validates :number, presence: true
-  
 end

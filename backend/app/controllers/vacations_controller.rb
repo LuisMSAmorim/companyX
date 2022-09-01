@@ -18,7 +18,7 @@ class VacationsController < ApplicationController
   # POST /vacations
   def create
     @vacation = Vacation.new(create_params)
-    
+
     if @vacation.save
       render json: @vacation, status: :created
     else

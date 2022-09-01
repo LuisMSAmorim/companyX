@@ -10,52 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_145810) do
+ActiveRecord::Schema[7.0].define(version: 20_220_831_145_810) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "departments", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'departments', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.date "birth_date"
-    t.date "start_date"
-    t.string "email"
-    t.string "city"
-    t.string "country"
-    t.string "street"
-    t.string "zipcode"
-    t.string "number"
-    t.string "state"
-    t.string "district"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "department_id", null: false
-    t.string "role"
-    t.boolean "is_on_vacation", default: false
-    t.index ["department_id"], name: "index_employees_on_department_id"
+  create_table 'employees', force: :cascade do |t|
+    t.string 'name'
+    t.date 'birth_date'
+    t.date 'start_date'
+    t.string 'email'
+    t.string 'city'
+    t.string 'country'
+    t.string 'street'
+    t.string 'zipcode'
+    t.string 'number'
+    t.string 'state'
+    t.string 'district'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'department_id', null: false
+    t.string 'role'
+    t.boolean 'is_on_vacation', default: false
+    t.index ['department_id'], name: 'index_employees_on_department_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'email'
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "vacations", force: :cascade do |t|
-    t.bigint "employee_id", null: false
-    t.date "start_date"
-    t.date "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_vacations_on_employee_id"
+  create_table 'vacations', force: :cascade do |t|
+    t.bigint 'employee_id', null: false
+    t.date 'start_date'
+    t.date 'end_date'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['employee_id'], name: 'index_vacations_on_employee_id'
   end
 
-  add_foreign_key "employees", "departments"
-  add_foreign_key "vacations", "employees"
+  add_foreign_key 'employees', 'departments'
+  add_foreign_key 'vacations', 'employees'
 end

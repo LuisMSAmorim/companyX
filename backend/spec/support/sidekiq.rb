@@ -1,4 +1,3 @@
-
 RSpec::Sidekiq.configure do |config|
   # Clears all job queues before each example
   config.clear_all_enqueued_jobs = true # default => true
