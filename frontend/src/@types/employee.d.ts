@@ -12,6 +12,7 @@ export interface Employee {
   state: string
   district: string
   role: string
+  is_on_vacation: boolean
   created_at: Date
   updated_at: Date
   department_id: number
