@@ -17,13 +17,15 @@ class VacationsController < ApplicationController
 
   # POST /vacations
   def create
-    @vacation = Vacation.new(create_params)
+    @vacation = vacations_service.create(create_params)
 
-    if @vacation.save
+    if @vacation.errors.empty?
       render json: @vacation, status: :created
     else
       render json: @vacation.errors, status: :unprocessable_entity
     end
+    rescue ApplicationService::Unprocessable => e
+      render json: { errors: e.message }, status: :unprocessable_entity
   end
 
   # PATCH/PUT /vacations/1

@@ -35,7 +35,7 @@ RSpec.describe VacationsController, type: :controller do
 
   describe '#create' do
     context 'when successful' do
-      subject { post :create, params: { vacation: attributes_for(:vacation, employee_id: @employee.id) } }
+      subject { post :create, params: { vacation: {employee_id: @employee.id, start_date: Date.today + 50.days, end_date: Date.today + 80.days } } }
       it 'returns http status created' do
         expect(subject).to have_http_status(:created)
       end
@@ -48,6 +48,21 @@ RSpec.describe VacationsController, type: :controller do
     end
     context 'when unsuccessful' do
       subject { post :create, params: { vacation: attributes_for(:vacation, employee_id: @employee.id, start_date: nil) } }
+      it 'returns http status unprocessable_entity' do
+        expect(subject).to have_http_status(:unprocessable_entity)
+      end
+      it 'returns the errors' do
+        expect(subject.body).to_not be_nil
+      end
+      it 'does not returns the created vacation' do
+        expect(subject.body).to_not eq(Vacation.last.to_json)
+      end
+      it 'does not create a vacation' do
+        expect { subject }.to_not change { Vacation.count }
+      end
+    end
+    context 'when unsuccessful - employee alredy has scheduled vacations for this period' do
+      subject { post :create, params: { vacation: attributes_for(:vacation, employee_id: @employee.id) } }
       it 'returns http status unprocessable_entity' do
         expect(subject).to have_http_status(:unprocessable_entity)
       end

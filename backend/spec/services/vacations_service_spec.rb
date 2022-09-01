@@ -20,6 +20,22 @@ RSpec.describe VacationsService, type: :service do
     end
   end
 
+  describe '#create' do
+    context 'when the employee does not has a scheduled vacation for this period' do
+      it 'creates a new vacation' do
+        params = params = { employee_id: @employee.id, start_date: Date.today + 20.days, end_date: Date.today + 50.days }
+        expect(@service.create(params)).to be_a(Vacation)
+      end
+    end
+    context 'when the employee has a scheduled vacation for this period' do
+      it 'raises an Unprocessable exception' do
+        create(:vacation, employee: @employee, start_date: Date.today, end_date: Date.today + 15.days)
+        params = { employee_id: @employee.id, start_date: Date.today, end_date: Date.today + 15.days }
+        expect { @service.create(params) }.to raise_error(ApplicationService::Unprocessable)
+      end
+    end
+  end
+
   describe '#update' do
     context 'when the vacation start_date is in the future' do
       subject { @service.update(@vacation, { start_date: Date.today + 1.day, end_date: Date.today + 2.days }) }
