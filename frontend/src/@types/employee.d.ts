@@ -1,7 +1,6 @@
 export interface Employee {
   id: number
-  first_name: string
-  last_name: string
+  name: string
   birth_date: Date
   start_date: Date
   email: string
