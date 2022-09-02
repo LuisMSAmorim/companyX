@@ -1,7 +1,8 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 import { DefaultLayout } from './layouts/DefaultLayout/DefaultLayout'
-import { DepartmentsLayout } from './layouts/Departments/DepartmentsLayout'
+import { DepartmentsLayout } from './layouts/DepartmentsLayout/DepartmentsLayout'
+import { CreateDepartments } from './pages/CreateDepartments/CreateDepartments'
 import { ListDepartments } from './pages/ListDepartments/ListDepartments'
 import { Login } from './pages/Login/Login'
 
@@ -22,8 +23,9 @@ export function Router() {
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/login" element={<Login />} />
 
-        <Route path="/departments" element={<DepartmentsLayout />}>
-          <Route path="/departments/list" element={<ListDepartments />} />
+        <Route element={<DepartmentsLayout />}>
+          <Route path="/departments" element={<ListDepartments />} />
+          <Route path="/departments/new" element={<CreateDepartments />} />
         </Route>
       </Route>
     </Routes>

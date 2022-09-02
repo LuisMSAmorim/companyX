@@ -32,9 +32,8 @@ export function Login() {
 
   return (
     <LoginContainer>
-      <h1>Login</h1>
+      <h1>Login</h1>Gestão
       {error != '' ? <ErrorMessage message={error} /> : null}
-      {/* <ErrorMessage message={"Login ou senha inválidos..."} /> */}
       <LoginForm onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('email')}

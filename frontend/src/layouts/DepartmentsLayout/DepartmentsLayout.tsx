@@ -4,9 +4,6 @@ import { DepartmentsContainer } from './Styles'
 export function DepartmentsLayout() {
   return (
     <DepartmentsContainer>
-      <header>
-        <h1>Departamentos</h1>
-      </header>
       <Outlet />
     </DepartmentsContainer>
   )

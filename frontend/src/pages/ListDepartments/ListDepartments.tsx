@@ -3,7 +3,12 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Department } from '../../@types/department'
-import { DepartmentCard, ListDepartmentsBody, ListDepartmentsContainer, ListDepartmentsFooter } from './styles'
+import { DepartmentsHeader } from '../../components/DepartmentHeader/DepartmentHeader'
+import {
+  DepartmentCard,
+  ListDepartmentsBody,
+  ListDepartmentsContainer,
+} from './styles'
 
 const apiUrl = 'http://localhost:5000'
 
@@ -23,17 +28,19 @@ export function ListDepartments() {
 
   return (
     <ListDepartmentsContainer>
-      <ListDepartmentsFooter>
-        <a onClick={handleAddDepartment}>Novo Departamento</a>
-      </ListDepartmentsFooter>
+      <DepartmentsHeader
+        title='Departamentos'
+        action={handleAddDepartment}
+        message="Novo Departamento"
+      />
       <ListDepartmentsBody>
-      {departments.map((department) => {
-        return (
-          <DepartmentCard key={department.id}>
-            <h1>{department.name}</h1>
-          </DepartmentCard>
-        )
-      })}
+        {departments.map((department) => {
+          return (
+            <DepartmentCard href={`${department.id}/employees`} key={department.id}>
+              <h1>{department.name}</h1>
+            </DepartmentCard>
+          )
+        })}
       </ListDepartmentsBody>
     </ListDepartmentsContainer>
   )
