@@ -19,7 +19,7 @@ export const ListDepartmentsBody = styled.div`
   gap: 2rem;
 `
 
-export const DepartmentCard = styled.a`
+export const DepartmentCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
