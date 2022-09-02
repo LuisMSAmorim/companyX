@@ -30,6 +30,10 @@ export function ListDepartmentEmployees() {
     })
   }, [])
 
+  function handleEmployeeDetails(employee: Employee, departmentName: string) {
+    navigate(`/employees/${employee.id}`, { state: { employee, departmentName } })
+  }
+
   return (
     <ListDepartmentEmployeesContainer>
       <DepartmentsHeader
@@ -40,7 +44,7 @@ export function ListDepartmentEmployees() {
       <ListDepartmentEmployeesBody>
         {employees.map((employee) => {
           return (
-            <EmployeeCard isOnVacation={employee.is_on_vacation} key={employee.id}>
+            <EmployeeCard onClick={() => handleEmployeeDetails(employee, state.departmentName)} isOnVacation={employee.is_on_vacation} key={employee.id}>
               <EmplooyeeCardHeader>
                 <h1>{employee.name}</h1>
               </EmplooyeeCardHeader>

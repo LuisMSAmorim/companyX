@@ -27,6 +27,12 @@ export const EmployeeCard = styled.div.attrs((props: { isOnVacation: boolean }) 
   transition: 0.3s;
   text-decoration: none;
   color: black;
+  transition: 0.3s;
+
+  &:hover {
+    background: ${(props) => props.isOnVacation ? props.theme['gray-700'] : props.theme['purple-700']};
+    cursor: pointer;
+  }
 `
 
 export const EmplooyeeCardHeader = styled.div`
@@ -46,8 +52,4 @@ export const EmployeeCardBody = styled.div`
   span {
     font-weight: bold;
   }
-`
-
-export const OnVacationEmployeeCard = styled.div`
-  background-color: ${(props) => props.theme['gray-300']};
 `
