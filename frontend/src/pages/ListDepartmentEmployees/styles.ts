@@ -1,8 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const ListDepartmentEmployeesContainer = styled.div`
-
-`
+export const ListDepartmentEmployeesContainer = styled.div``
 
 export const ListDepartmentEmployeesBody = styled.div`
   display: flex;
@@ -15,7 +13,7 @@ export const ListDepartmentEmployeesBody = styled.div`
   gap: 2rem;
 `
 
-export const EmployeeCard  = styled.div`
+export const EmployeeCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -29,7 +27,7 @@ export const EmployeeCard  = styled.div`
   transition: 0.3s;
   text-decoration: none;
   color: black;
-  `
+`
 
 export const EmplooyeeCardHeader = styled.div`
   font-size: 1.2rem;
@@ -38,8 +36,9 @@ export const EmplooyeeCardHeader = styled.div`
 `
 export const EmployeeCardBody = styled.div`
   font-size: 1rem;
-  
+
   p {
     padding-top: 0.8rem;
+    font-weight: bold;
   }
 `

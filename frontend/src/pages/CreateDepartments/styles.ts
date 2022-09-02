@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-export const CreateDepartmentsContainer = styled.div`
-`
+export const CreateDepartmentsContainer = styled.div``
 
 export const CreateDepartmentsBody = styled.div`
   margin-top: 2rem;

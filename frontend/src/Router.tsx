@@ -27,7 +27,10 @@ export function Router() {
         <Route element={<DepartmentsLayout />}>
           <Route path="/departments" element={<ListDepartments />} />
           <Route path="/departments/new" element={<CreateDepartments />} />
-          <Route path="departments/:id/employees" element={<ListDepartmentEmployees />} />
+          <Route
+            path="departments/:id/employees"
+            element={<ListDepartmentEmployees />}
+          />
         </Route>
       </Route>
     </Routes>

@@ -28,20 +28,25 @@ export function ListDepartments() {
   }
 
   function handleSeeDepartmentEmployees(department: Department) {
-    navigate(`/departments/${department.id}/employees`, { state: { departmentName: department.name } })
+    navigate(`/departments/${department.id}/employees`, {
+      state: { departmentName: department.name },
+    })
   }
 
   return (
     <ListDepartmentsContainer>
       <DepartmentsHeader
-        title='Departamentos'
+        title="Departamentos"
         action={handleAddDepartment}
         message="Novo Departamento"
       />
       <ListDepartmentsBody>
         {departments.map((department) => {
           return (
-            <DepartmentCard onClick={() => handleSeeDepartmentEmployees(department)} key={department.id}>
+            <DepartmentCard
+              onClick={() => handleSeeDepartmentEmployees(department)}
+              key={department.id}
+            >
               <h1>{department.name}</h1>
             </DepartmentCard>
           )

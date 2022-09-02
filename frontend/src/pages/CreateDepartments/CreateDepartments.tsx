@@ -5,7 +5,11 @@ import { useNavigate } from 'react-router-dom'
 
 import { DepartmentsHeader } from '../../components/DepartmentHeader/DepartmentHeader'
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage'
-import { CreateDepartmentsBody, CreateDepartmentsContainer, CreateDepartmentsForm } from './styles'
+import {
+  CreateDepartmentsBody,
+  CreateDepartmentsContainer,
+  CreateDepartmentsForm,
+} from './styles'
 
 type Inputs = {
   name: string
@@ -29,7 +33,7 @@ export function CreateDepartments() {
         navigate('/departments')
       })
       .catch((err) => {
-        if(err.response.status === 422){
+        if (err.response.status === 422) {
           setError('Este nome já está em uso...')
         } else {
           setError('Erro interno do servidor...')
@@ -39,19 +43,23 @@ export function CreateDepartments() {
 
   return (
     <CreateDepartmentsContainer>
-      <DepartmentsHeader title='Novo Departamento' action={handleBackToList} message="Voltar" />
+      <DepartmentsHeader
+        title="Novo Departamento"
+        action={handleBackToList}
+        message="Voltar"
+      />
       <CreateDepartmentsBody>
         {error != '' ? <ErrorMessage message={error} /> : null}
         <CreateDepartmentsForm onSubmit={handleSubmit(onSubmit)}>
           <input
-              {...register('name')}
-              type="text"
-              required
-              placeholder="Nome"
-            />
+            {...register('name')}
+            type="text"
+            required
+            placeholder="Nome"
+          />
 
           <button type="submit">Enviar</button>
-          </CreateDepartmentsForm>
+        </CreateDepartmentsForm>
       </CreateDepartmentsBody>
     </CreateDepartmentsContainer>
   )

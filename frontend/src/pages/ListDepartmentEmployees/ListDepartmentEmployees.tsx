@@ -1,12 +1,18 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import { useLocation, useNavigate, useParams } from "react-router-dom"
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
-import { Employee } from "../../@types/employee"
-import { DepartmentsHeader } from "../../components/DepartmentHeader/DepartmentHeader"
-import { EmplooyeeCardHeader, EmployeeCard, EmployeeCardBody, ListDepartmentEmployeesBody, ListDepartmentEmployeesContainer } from "./styles"
+import { Employee } from '../../@types/employee'
+import { DepartmentsHeader } from '../../components/DepartmentHeader/DepartmentHeader'
+import {
+  EmplooyeeCardHeader,
+  EmployeeCard,
+  EmployeeCardBody,
+  ListDepartmentEmployeesBody,
+  ListDepartmentEmployeesContainer,
+} from './styles'
 
-const apiUrl = 'http://localhost:5000' 
+const apiUrl = 'http://localhost:5000'
 
 export function ListDepartmentEmployees() {
   const [employees, setEmployees] = useState<Employee[]>([])
@@ -23,10 +29,14 @@ export function ListDepartmentEmployees() {
       setEmployees(response.data)
     })
   }, [])
-  
+
   return (
     <ListDepartmentEmployeesContainer>
-      <DepartmentsHeader title={state.departmentName} action={handleBackToDepartments} message="Voltar" />
+      <DepartmentsHeader
+        title={state.departmentName}
+        action={handleBackToDepartments}
+        message="Voltar"
+      />
       <ListDepartmentEmployeesBody>
         {employees.map((employee) => {
           return (

@@ -9,7 +9,7 @@ interface ListDepartmentsHeaderProps {
 export function DepartmentsHeader({
   action,
   message,
-  title
+  title,
 }: ListDepartmentsHeaderProps) {
   return (
     <ListDepartmentsHeader>
