@@ -13,7 +13,7 @@ export const LoginContainer = styled.div`
   min-height: 50vh;
 
   background: ${(props) => props.theme['purple-500']};
-  color: ${(props) => props.theme['white']};
+  color: ${(props) => props.theme.white};
 
   h1 {
     font-size: 3.5rem;
@@ -29,7 +29,7 @@ export const LoginContainer = styled.div`
 export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
-  
+
   margin-top: 2rem;
   width: 100%;
 
@@ -39,7 +39,7 @@ export const LoginForm = styled.form`
     text-align: center;
     border-radius: 8px;
     border: none;
-    
+
     font-size: 1.2rem;
   }
 
@@ -56,7 +56,7 @@ export const LoginForm = styled.form`
     font-weight: bold;
     font-size: 1.6rem;
     background: ${(props) => props.theme['blue-700']};
-    color: ${(props) => props.theme['white']};
+    color: ${(props) => props.theme.white};
     cursor: pointer;
     transition: 0.2s;
   }

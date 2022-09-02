@@ -1,7 +1,7 @@
-import { ErrorMessageContainer } from "./styles";
+import { ErrorMessageContainer } from './styles'
 
 interface ErrorMessageProps {
-  message: string;
+  message: string
 }
 
 export function ErrorMessage({ message }: ErrorMessageProps) {
