@@ -40,13 +40,14 @@ export function ListDepartmentEmployees() {
       <ListDepartmentEmployeesBody>
         {employees.map((employee) => {
           return (
-            <EmployeeCard key={employee.id}>
+            <EmployeeCard isOnVacation={employee.is_on_vacation} key={employee.id}>
               <EmplooyeeCardHeader>
                 <h1>{employee.name}</h1>
               </EmplooyeeCardHeader>
               <EmployeeCardBody>
                 <p>{employee.email}</p>
                 <p>{employee.role}</p>
+                <p>{employee.is_on_vacation ? <span>Em férias!!</span> : null}</p>
               </EmployeeCardBody>
             </EmployeeCard>
           )

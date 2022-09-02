@@ -13,7 +13,7 @@ export const ListDepartmentEmployeesBody = styled.div`
   gap: 2rem;
 `
 
-export const EmployeeCard = styled.div`
+export const EmployeeCard = styled.div.attrs((props: { isOnVacation: boolean }) => props)`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -23,7 +23,7 @@ export const EmployeeCard = styled.div`
   min-height: 5vh;
   width: 45vw;
   border-radius: 8px;
-  background: ${(props) => props.theme['purple-300']};
+  background: ${(props) => props.isOnVacation ? props.theme['gray-300'] : props.theme['purple-300']};
   transition: 0.3s;
   text-decoration: none;
   color: black;
@@ -34,6 +34,7 @@ export const EmplooyeeCardHeader = styled.div`
   font-weight: bold;
   margin-bottom: 1rem;
 `
+
 export const EmployeeCardBody = styled.div`
   font-size: 1rem;
 
@@ -41,4 +42,12 @@ export const EmployeeCardBody = styled.div`
     padding-top: 0.8rem;
     font-weight: bold;
   }
+
+  span {
+    font-weight: bold;
+  }
+`
+
+export const OnVacationEmployeeCard = styled.div`
+  background-color: ${(props) => props.theme['gray-300']};
 `
