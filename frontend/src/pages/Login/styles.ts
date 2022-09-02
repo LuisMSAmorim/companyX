@@ -12,11 +12,17 @@ export const LoginContainer = styled.div`
   max-width: 100vh;
   min-height: 50vh;
 
-  background: ${(props) => props.theme['purple-300']};
+  background: ${(props) => props.theme['purple-500']};
   color: ${(props) => props.theme['white']};
 
   h1 {
     font-size: 3.5rem;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  div {
+    margin-top: 1.8rem;
+    margin-bottom: -2rem;
   }
 `
 
@@ -37,8 +43,12 @@ export const LoginForm = styled.form`
     font-size: 1.2rem;
   }
 
+  input:focus {
+    outline: none;
+  }
+
   button {
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding: 1rem;
     border-radius: 8px;
     border: none;
@@ -48,7 +58,7 @@ export const LoginForm = styled.form`
     background: ${(props) => props.theme['blue-700']};
     color: ${(props) => props.theme['white']};
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
   }
 
   button:hover {

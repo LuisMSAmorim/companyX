@@ -22,5 +22,6 @@ export const HeaderContainer = styled.div`
     text-decoration: none;
     font-size: 1.4rem;
     color: ${(props) => props.theme['white']};
+    cursor: pointer;
   }
 `
