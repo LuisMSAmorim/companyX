@@ -14,15 +14,16 @@ export function EmployeeDetails() {
       <div>Departamento: {departmentName}</div>
       <div>Cargo: {employee.role}</div>
       <div>Departamento: {employee.email}</div>
+      <div>{employee.is_on_vacation ? "Está de férias" : "Não está de férias"}</div>
 
       <h2>Endereço</h2>
-      <div>Departamento: {employee.city}</div>
-      <div>Departamento: {departmentName}</div>
-      <div>Departamento: {departmentName}</div>
-      <div>Departamento: {departmentName}</div>
-      <div>Departamento: {departmentName}</div>
-      <div>Departamento: {departmentName}</div>
-      <div>Departamento: {departmentName}</div>
+      <div>País: {employee.country}</div>
+      <div>Estado: {employee.state}</div>
+      <div>CEP: {employee.zipcode}</div>
+      <div>Cidade: {employee.city}</div>
+      <div>Bairro: {employee.district}</div>
+      <div>Rua: {employee.street}</div>
+      <div>N°: {employee.number}</div>
     </EmployeeDetailsContainer>
   )
 }
