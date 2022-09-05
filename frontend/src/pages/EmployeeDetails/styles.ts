@@ -7,6 +7,7 @@ export const EmployeeDetailsContainer = styled.div`
   flex-grow: 1;
   text-align: center;
 
+  margin-top: 2.3rem;
   border-radius: 8px;
   background: ${(props) => props.theme['purple-300']};
   font-weight: bold;
