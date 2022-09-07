@@ -32,7 +32,7 @@ export function Login() {
 
   return (
     <LoginContainer>
-      <h1>Login</h1>Gestão
+      <h1>Login</h1>
       {error != '' ? <ErrorMessage message={error} /> : null}
       <LoginForm onSubmit={handleSubmit(onSubmit)}>
         <input

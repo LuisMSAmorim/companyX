@@ -19,6 +19,7 @@ export const ListDepartmentsHeader = styled.div`
     color: ${(props) => props.theme.white};
     cursor: pointer;
     transition: 0.2s;
+    margin-left: 1rem;
   }
 
   a:hover {

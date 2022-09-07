@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import { DefaultLayout } from './layouts/DefaultLayout/DefaultLayout'
 import { DepartmentsLayout } from './layouts/DepartmentsLayout/DepartmentsLayout'
 import { CreateDepartments } from './pages/CreateDepartments/CreateDepartments'
+import { CreateEmployee } from './pages/CreateEmployee/CreateEmployee'
 import { EmployeeDetails } from './pages/EmployeeDetails/EmployeeDetails'
 import { ListDepartmentEmployees } from './pages/ListDepartmentEmployees/ListDepartmentEmployees'
 import { ListDepartments } from './pages/ListDepartments/ListDepartments'
@@ -33,6 +34,7 @@ export function Router() {
             element={<ListDepartmentEmployees />}
           />
           <Route path="/employees/:id" element={<EmployeeDetails />} />
+          <Route path="/employees/new" element={<CreateEmployee />} />
         </Route>
       </Route>
     </Routes>

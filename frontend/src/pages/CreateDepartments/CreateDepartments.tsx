@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import { Department } from '../../@types/department'
 
 import { DepartmentsHeader } from '../../components/DepartmentHeader/DepartmentHeader'
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage'
@@ -11,22 +12,18 @@ import {
   CreateDepartmentsForm,
 } from './styles'
 
-type Inputs = {
-  name: string
-}
-
 const apiUrl = 'http://localhost:5000'
 
 export function CreateDepartments() {
   const [error, setError] = useState('')
-  const { register, handleSubmit } = useForm<Inputs>()
+  const { register, handleSubmit } = useForm<Department>()
   const navigate = useNavigate()
 
   function handleBackToList() {
     navigate('/departments/')
   }
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Department> = (data) => {
     axios
       .post(`${apiUrl}/departments`, data)
       .then((res) => {

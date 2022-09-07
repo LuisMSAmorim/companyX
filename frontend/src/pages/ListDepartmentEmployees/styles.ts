@@ -1,6 +1,19 @@
 import styled from 'styled-components'
 
-export const ListDepartmentEmployeesContainer = styled.div``
+export const ListDepartmentEmployeesContainer = styled.div`
+  header  a {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 1rem;
+    background: ${(props) => props.theme['blue-500']};
+    color: ${(props) => props.theme.white};
+    cursor: pointer;
+    transition: 0.2s;
+    margin-left: auto;
+    margin-top: 1rem;
+  }
+`
 
 export const ListDepartmentEmployeesBody = styled.div`
   display: flex;

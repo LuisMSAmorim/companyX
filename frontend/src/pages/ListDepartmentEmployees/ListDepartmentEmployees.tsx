@@ -20,18 +20,23 @@ export function ListDepartmentEmployees() {
   const { id } = useParams()
   const { state }: any = useLocation()
 
-  function handleBackToDepartments() {
-    navigate('/departments/')
-  }
-
+  
   useEffect(() => {
     axios.get(`${apiUrl}/departments/${id}/employees`).then((response) => {
       setEmployees(response.data)
     })
   }, [])
-
+  
   function handleEmployeeDetails(employee: Employee, departmentName: string) {
     navigate(`/employees/${employee.id}`, { state: { employee, departmentName } })
+  }
+
+  function handleNewEmployee(departmentName: string) {
+    navigate('/employees/new')
+  }
+
+  function handleBackToDepartments() {
+    navigate('/departments/')
   }
 
   return (
@@ -40,6 +45,9 @@ export function ListDepartmentEmployees() {
         title={state.departmentName}
         action={handleBackToDepartments}
         message="Voltar"
+        haveSecondButton
+        secondMessage='Novo Colaborador'
+        secondAction={() => handleNewEmployee(state.departmentName)}
       />
       <ListDepartmentEmployeesBody>
         {employees.map((employee) => {
